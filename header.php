@@ -32,10 +32,6 @@
         <header id="masthead" class="site-header">
 
             <div id="off-canvas-menu" class="off-canvas-menu">
-                <div class="menu-content">
-                    <!-- Add your navigation menu items here -->
-                    <?php wp_nav_menu(array('theme_location' => 'primary-menu')); ?>
-                </div>
                 <button id="open-menu" class="menu-button container-checkbox">
                     <input type="checkbox" id="checkbox1" class="checkbox1 visuallyHidden">
                     <label for="checkbox1">
@@ -47,20 +43,33 @@
                         </div>
                     </label>
                 </button>
+                <div class="menu-content">
+                    <!-- Add your navigation menu items here -->
+                    <?php /* wp_nav_menu(array('theme_location' => 'primary-menu')); */ ?>
+                    <!-- Dummy menu Start -->
 
-                <div class="container-checkbox">
-
-                    <input type="checkbox" id="checkbox1" class="checkbox1 visuallyHidden">
-                    <label for="checkbox1">
-                        <div class="hamburger hamburger1">
-                            <span class="bar bar1"></span>
-                            <span class="bar bar2"></span>
-                            <span class="bar bar3"></span>
-                            <span class="bar bar4"></span>
-                        </div>
-                    </label>
-
+                    <div id="fancyMenu" class="menu">
+                        <ul>
+                            <li class="page_item page-item-6 current_page_item">Home</li>
+                            <li class="page_item page-item-2">Sample Page</li>
+                            <li class="page_item page-item-3">Sample Page</li>
+                            <li class="page_item page-item-4">Sample Page</li>
+                            <li class="page_item page-item-5">Sample Page</li>
+                            <li class="page_item page-item-6">Sample Page</li>
+                            <li class="page_item page-item-7">Sample Page</li>
+                            <li class="page_item page-item-8">Sample Page</li>
+                        </ul>
+                    </div>
+                    <!-- Dummy menu End -->
                 </div>
 
             </div>
+            <a href="#" id="bookBtn" class="book-btn hover-border-11">
+                <span class="book-span">book</span>
+            </a>
+            <a href="#" id="mainLogo" class="">
+                <img class="text-logo" src="<?php echo get_template_directory_uri(); ?>/assets/logos/logo.svg" alt="">
+                <img class="img-logo" src="<?php echo get_template_directory_uri(); ?>/assets/logos/logo-icon.svg"
+                    alt="">
+            </a>
         </header><!-- #masthead -->

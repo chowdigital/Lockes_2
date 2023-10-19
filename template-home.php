@@ -2,34 +2,65 @@
 
 <!-- Full Page Intro -->
 
-<div class="view full-page-intro z-depth-3">
 
-<div class="view full-page-intro" style="background-image:  url(<?php the_post_thumbnail_url(); ?>); background-repeat: no-repeat; background-position: center; background-size: cover;">
- 
-		 </div>
-<!-- Mask & flexbox options-->
+<div class="section-video">
+    <div class="video-container">
+        <div class="fade-in"></div>
 
-<div class="mask d-flex justify-content-center align-items-center">
-
-  <!-- Content -->
-  <div class="container">
-
-
-
-  </div>
-  <!-- Content -->
-
-  
-
+        <video playsinline autoplay muted loop id="myVideoLg"
+            poster="<?php echo get_template_directory_uri(); ?>/assets/video/DSC_1805_3.png">
+            <source src="<?php echo get_template_directory_uri(); ?>/assets/video/DSC_1805_3.mp4" type="video/mp4">
+            <source src="<?php echo get_template_directory_uri(); ?>/assets/video/DSC_1805_3.webm" type="video/webm">
+            <source src="<?php echo get_template_directory_uri(); ?>/assets/video/DSC_1805_3.ogg" type="video/ogg">
+        </video>
+        <div class="main-caption">
+            <h1 class="">
+                cocktails
+                <br>&amp; pizza
+            </h1>
+        </div>
+    </div>
 </div>
-<!-- Mask & flexbox options-->
 
+
+
+
+<div class="section-parent">
+    <section class="section-menus container section-2">
+        <div class="menu-title">
+            <h2>menus</h2>
+        </div>
+        <div class="appear2 menu-img draw-border">
+
+            <img class="" src="<?php echo get_template_directory_uri(); ?>/assets/img/CD1_1309.jpg" alt="cocktails">
+            <div class="menu-img-txt">
+                <span>cocktails</span>
+            </div>
+
+        </div>
+        <div class="appear2 menu-img draw-border">
+            <img class="" src="<?php echo get_template_directory_uri(); ?>/assets/img/AdobeStock_551261440_Preview.jpeg"
+                alt="pizza">
+            <div class="menu-img-txt">
+                <span>food</span>
+            </div>
+        </div>
+        <div class="appear2 menu-img draw-border">
+            <img class="" src="<?php echo get_template_directory_uri(); ?>/assets/img/AdobeStock_478478073_Preview.jpeg"
+                alt="wine">
+            <div class="menu-img-txt">
+                <span>wine</span>
+            </div>
+        </div>
+
+        <div class="appear2 menu-img draw-border">
+            <img class="" src="<?php echo get_template_directory_uri(); ?>/assets/img/AdobeStock_467539888_Preview.jpeg"
+                alt="beer">
+            <div class="menu-img-txt">
+                <span>beer</span>
+            </div>
+        </div>
+
+    </section>
 </div>
-<!-- Full Page Intro --> 
-
-
-
-</section>
-
-
 <?php get_footer(); ?>

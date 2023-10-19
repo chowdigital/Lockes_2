@@ -5,43 +5,8 @@ Author: Sean Cloudsdale
 Author URI: https://cloudsdale.co.uk/
 */
 
-/*--------------------------------------------------------------
->>> TABLE OF CONTENTS:
-----------------------------------------------------------------
-# Generic
-	- Normalize
-	- Box sizing
-# Base
-	- Typography
-	- Elements
-	- Links
-	- Forms
-## Layouts
-# Components
-	- Navigation
-	- Posts and pages
-	- Comments
-	- Widgets
-	- Media
-	- Captions
-	- Galleries
-# plugins
-	- Jetpack infinite scroll
-# Utilities
-	- Accessibility
-	- Alignments
+//https://simpleparallax.com/
 
---------------------------------------------------------------*/
-
-// Import variables and mixins.
-//@import "abstracts/abstracts";
-
-/*--------------------------------------------------------------
-# Generic
---------------------------------------------------------------*/
-
-/* Normalize
---------------------------------------------- */
 @import "generic/normalize";
 
 // ===========================================================================
@@ -53,15 +18,68 @@ Author URI: https://cloudsdale.co.uk/
 //  1. Header Settings
 //  2. Typography
 //  3. Navigation
-//  4. Footer
-//  5. Containers
-//  6. Buttons
-//  7. Video
-//  8. Carousel
+//  4. Video
+//  5. Menu
+//  6. Appear
 
 $primary: #002423;
 $highlight: #e7a649;
 $white: #dae0e5;
+$secondary: #1e3837;
+
+$xs: 575px;
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+$xxl: 1400px;
+
+.d-none {
+  display: none;
+}
+.d-block {
+  display: block;
+}
+@media (min-width: $sm) {
+  .d-sm-none {
+    display: none;
+  }
+  .d-sm-block {
+    display: block;
+  }
+}
+@media (min-width: $md) {
+  .d-md-none {
+    display: none;
+  }
+  .d-md-block {
+    display: block;
+  }
+}
+@media (min-width: $lg) {
+  .d-lg-none {
+    display: none;
+  }
+  .d-lg-block {
+    display: block;
+  }
+}
+@media (min-width: $xl) {
+  .d-xl-none {
+    display: none;
+  }
+  .d-xl-block {
+    display: block;
+  }
+}
+@media (min-width: $xxl) {
+  .d-xxl-none {
+    display: none;
+  }
+  .d-xxl-block {
+    display: block;
+  }
+}
 
 // ===========================================================================
 // 1. Header Settings
@@ -78,8 +96,7 @@ html {
 body.logged-in {
   nav,
   .cm-nav,
-  #off-canvas-menu,
-  #open-menu {
+  .hamburger {
     margin-top: 32px;
   }
 }
@@ -102,84 +119,129 @@ body {
 // ===========================================================================
 //  2. Typography
 // ===========================================================================
+@font-face {
+  font-family: suisseintl-thin;
 
-h1,
-h2,
-h3,
-h4,
-h5 {
-  font-family: "neue-haas-grotesk-display", sans-serif;
-  font-weight: 700;
+  src: url("assets/webfonts/SuisseIntlMonoThin.eot");
+  src: url("assets/webfonts/SuisseIntlMonoThin.eot") format("embedded-opentype"),
+    url("assets/webfonts/SuisseIntlMonoThin.ttf") format("truetype"),
+    url("assets/webfonts/SuisseIntlMonoThin.woff") format("woff"),
+    url("assets/webfontsntsntsnts/SuisseIntlMonoThin.svg") format("svg");
+  font-weight: 400;
   font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: suisseintl-regular;
+  src: url("assets/webfonts/SuisseIntlMono-Regular.eot");
+  src: url("assets/webfonts/SuisseIntlMono-Regular.eot")
+      format("embedded-opentype"),
+    url("assets/webfonts/SuisseIntlMono-Regular.ttf") format("truetype"),
+    url("assets/webfonts/SuisseIntlMono-Regular.woff") format("woff"),
+    url("assets/webfonts/SuisseIntlMono-Regular.svg") format("svg");
+  font-weight: 400;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: johnston-medium;
+  src: url("assets/webfonts/johnston_itc_medium-webfont.eot");
+  src: url("assets/webfonts/johnston_itc_medium-webfont.eot")
+      format("embedded-opentype"),
+    url("assets/webfonts/johnston_itc_medium-webfont.ttf") format("truetype"),
+    url("assets/webfonts/johnston_itc_medium-webfont.woff") format("woff"),
+    url("assets/webfonts/johnston_itc_medium-webfont.svg") format("svg");
+  font-weight: 400;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: suisseintl-bold;
+  src: url("assets/webfonts/SuisseIntlMono-Bold.eot");
+  src: url("assets/webfontsntsntsntsnts/SuisseIntlMono-Bold.eot")
+      format("embedded-opentype"),
+    url("assets/webfonts/SuisseIntlMono-Bold.ttf") format("truetype"),
+    url("assets/webfonts/SuisseIntlMono-Bold.woff") format("woff"),
+    url("assets/webfonts/SuisseIntlMono-Bold.svg") format("svg");
+  font-weight: 400;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: lockes;
+  src: url("assets/webfonts/lockes.eot");
+  src: url("assets/webfonts/lockes.eot") format("embedded-opentype"),
+    url("assets/webfonts/lockes.ttf") format("truetype"),
+    url("assets/webfonts/lockes.woff") format("woff"),
+    url("assets/webfonts/lockes.svg") format("svg");
+  font-weight: 400;
+  font-style: normal;
+  font-display: block;
 }
 
+@font-face {
+  font-family: Suisse-Works;
+  src: url("assets/webfonts/sw.eot");
+  src: url("assets/webfonts/sw.eot") format("embedded-opentype"),
+    url("assets/webfonts/sw.woff2") format("woff2"),
+    url("assets/webfonts/sw.woff") format("woff"),
+    url("assets/webfonts/sw.ttf") format("truetype"),
+    url("assets/webfonts/lockes.svg") format("svg");
+}
+
+// General properties
 body,
 p {
-  font-family: "neue-haas-grotesk-display", sans-serif;
-  font-weight: 500;
+  font-family: Questrial, sans-serif;
   font-style: normal;
-}
-.menu-item a,
-.btn,
-button {
-  font-family: "neue-haas-grotesk-display", sans-serif;
-  font-weight: 600;
-  font-style: normal;
-  text-transform: lowercase;
+  font-weight: 400;
   letter-spacing: 1px;
 }
 
-.menu-button .icon {
-  width: 30px;
-  height: 2px;
-  background-color: #333;
-  display: block;
-  position: relative;
-  transition: transform 0.3s ease;
+h1 {
+  font-family: Suisse-Works, sans-serif;
+}
+h2,
+h3,
+h4,
+h5,
+h6,
+.menu-item a,
+.btn,
+span {
+  font-family: suisseintl-regular, sans-serif;
+  font-style: normal;
+  letter-spacing: 1px;
+  font-weight: 400;
+  text-transform: lowercase;
+}
+h3 {
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+h6 {
+  font-size: 0.7em;
 }
 
-.menu-button .icon::before,
-.menu-button .icon::after {
-  content: "";
-  position: absolute;
-  width: 30px;
-  height: 2px;
-  background-color: #333;
-  transition: transform 0.3s ease;
-}
-
-.menu-button .icon::before {
-  top: -10px;
-}
-
-.menu-button .icon::after {
-  top: 10px;
-}
-
-.off-canvas-menu.open .menu-button .icon {
-  transform: rotate(45deg);
-}
-
-.off-canvas-menu.open .menu-button .icon::before {
-  transform: translateY(0) rotate(-45deg);
-}
-
-.off-canvas-menu.open .menu-button .icon::after {
-  transform: translateY(0) rotate(45deg);
+.thick {
+  font-family: Suisse-Works, sans-serif;
 }
 // ===========================================================================
 //  3. Navigation
 // ===========================================================================
+
+@import "cloudsdale/book-btn.scss";
+
 /* Off-canvas menu container */
 .off-canvas-menu {
   position: fixed;
   top: 0;
-  left: -50%; /* Start off-canvas menu off-screen */
-  width: 50%;
+  left: -100%; /* Start off-canvas menu off-screen */
+  width: 100%;
   height: 100%;
-  background-color: #fff; /* Set your desired background color */
   z-index: 999; /* Ensure it appears on top of other elements */
   transition: left 0.3s ease; /* Add a smooth transition effect */
+  background-color: $primary;
 }
 
 /* Menu content */
@@ -230,16 +292,15 @@ h1 {
 
 .hamburger {
   margin: 0 auto;
-  margin-top: 30px;
-  width: 30px;
+  width: 40px;
   height: 30px;
   position: relative;
 }
 
 .hamburger .bar {
   padding: 0;
-  width: 30px;
-  height: 4px;
+  width: 40px;
+  height: 2px;
   background-color: $highlight;
   display: block;
   border-radius: 4px;
@@ -268,7 +329,7 @@ h1 {
 .checkbox1:checked + label > .hamburger1 > .bar1 {
   transform: rotate(45deg);
   transform-origin: 5%;
-  width: 41px;
+  width: 44px;
 }
 
 .checkbox1:checked + label > .hamburger1 > .bar2 {
@@ -284,5 +345,354 @@ h1 {
 .checkbox1:checked + label > .hamburger1 > .bar4 {
   transform-origin: 5%;
   transform: rotate(-45deg);
-  width: 41px;
+  width: 44px;
+}
+// Main Logo
+#open-menu {
+  z-index: 1000;
+}
+#mainLogo {
+  width: 100%;
+  position: fixed;
+  top: 9px;
+  display: flex;
+  justify-content: center;
+  .text-logo {
+    display: none;
+  }
+  .img-logo {
+    width: 60px;
+  }
+}
+@media (min-width: $lg) {
+  #mainLogo {
+    width: 100%;
+    position: fixed;
+    top: 23px;
+    display: flex;
+    justify-content: center;
+    .text-logo {
+      width: 220px;
+      display: block;
+    }
+    .img-logo {
+      display: none;
+    }
+  }
+}
+
+// The Off canvas bit
+.menu-content {
+  background-color: red;
+  height: 100%;
+}
+#fancyMenu {
+  width: 100%;
+  height: 100%;
+  background-color: red;
+}
+
+// ===========================================================================
+// 4. Video
+// ===========================================================================
+.section-video {
+  height: 100vh;
+}
+.video-container {
+  position: absolute;
+  height: calc(100vh - 80px);
+  width: calc(100vw - 40px);
+  overflow: hidden;
+  position: relative;
+  top: 65px;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+  animation-name: fadeInUp;
+  opacity: 0;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
+.video-container video {
+  min-width: 100%;
+  min-height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    //transform: translate3d(0, 40px, 0);
+  }
+  70% {
+    //transform: translate3d(0, 40px, 0);
+    opacity: 0;
+  }
+  100% {
+    //transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+/* Just styling the content of the div, the *magic* in the previous rules */
+.video-container .caption {
+  z-index: 1;
+  position: relative;
+  text-align: center;
+  color: $white;
+  padding: 10px;
+}
+
+// ===========================================================================
+// 5. Menu
+// ===========================================================================
+.section-menus {
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  display: flex;
+  height: 400px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.section-menus:after {
+  content: "";
+  background-color: $secondary;
+  width: 100%;
+  position: absolute;
+  height: 80px;
+  left: 0px;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  position: absolute;
+  margin-top: 10px;
+  z-index: -1;
+}
+
+.section-menus {
+  width: 260px;
+}
+
+@media (min-width: $xs) {
+  .section-menus {
+    width: 540px;
+  }
+  .section-menus:after {
+    margin-top: 160px;
+  }
+}
+@media (min-width: $lg) {
+  .section-menus {
+    width: 810px;
+  }
+}
+@media (min-width: $xxl) {
+  .section-menus {
+    align-items: center;
+    width: 1350px;
+  }
+  .section-menus::after {
+    margin-top: 0;
+  }
+}
+.menu-img {
+  margin: 10px;
+  width: 250px;
+  height: 380px;
+  position: relative;
+  text-align: center;
+  img {
+    width: 250px;
+    height: 380px;
+  }
+}
+
+.menu-img img::after {
+  content: "";
+  background-color: $secondary;
+  width: 100%;
+  position: absolute;
+  height: 80px;
+  left: 0px;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  position: absolute;
+  margin-top: 160px;
+  z-index: -1;
+}
+.menu-title {
+  margin: 10px;
+  height: 80px;
+  width: 250px;
+  color: $white;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media (min-width: $xs) {
+  .menu-title {
+    margin: 10px;
+    height: 380px;
+    width: 250px;
+    color: $white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.menu-img-txt {
+  position: absolute;
+  height: 80px;
+  width: calc(100% - 2px);
+  background-color: rgba(0, 36, 35, 0.5);
+  transition: background-color 0.3s ease;
+  transition: all 0.3s ease-out;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  span {
+    color: $white;
+  }
+}
+
+.menu-img:hover {
+  .menu-img-txt {
+    background-color: rgba(0, 36, 35, 0.8);
+    //top: calc(50% + 80px);
+  }
+}
+// hover
+
+@mixin btn-border-drawing(
+  $color: #ccc,
+  $hover: black,
+  $width: 1px,
+  $vertical: top,
+  $horizontal: left,
+  $duration: 0.1s
+) {
+  box-shadow: inset 0 0 0 $width $color;
+  color: $color;
+  transition: color $duration $duration/3;
+  position: relative;
+
+  &::before,
+  &::after {
+    border: 0 solid transparent;
+    box-sizing: border-box;
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    width: 0;
+    height: 0;
+
+    #{$vertical}: 0;
+    #{$horizontal}: 0;
+  }
+
+  &::before {
+    $h-side: if($horizontal == "left", "right", "left");
+
+    border-#{$vertical}-width: $width;
+    border-#{$h-side}-width: $width;
+  }
+
+  &::after {
+    $v-side: if($vertical == "top", "bottom", "top");
+
+    border-#{$v-side}-width: $width;
+    border-#{$horizontal}-width: $width;
+  }
+
+  &:hover {
+    color: $hover;
+
+    &::before,
+    &::after {
+      border-color: $hover;
+      transition: border-color 0s, width $duration, height $duration;
+      width: 250px;
+      height: 380px;
+    }
+
+    &::before {
+      transition-delay: 0s, 0s, $duration;
+    }
+
+    &::after {
+      transition-delay: 0s, $duration, 0s;
+    }
+  }
+}
+
+.draw-border {
+  @include btn-border-drawing(transparent, $highlight, 1px, bottom, right);
+}
+
+//=== Button styling, semi-ignore
+.menu-img {
+  background: none;
+  border: none;
+  cursor: pointer;
+  letter-spacing: 0.05rem;
+  &:focus {
+    outline: 1px dotted $primary;
+  }
+}
+
+// ===========================================================================
+// 6. Appear
+// ===========================================================================
+
+.appear2 {
+  -webkit-transition: all 0.8s;
+  transition: all 0.8s;
+  opacity: 0;
+  -webkit-transform: translateY(20px);
+  transform: translateY(20px);
+}
+
+.appear2.inview2 {
+  opacity: 1;
+  -webkit-transform: none;
+  transform: none;
+}
+
+.appear2.inview2:nth-child(1) {
+  -webkit-transition-delay: 0.1s;
+  transition-delay: 0.1s;
+}
+
+.appear2.inview2:nth-child(2) {
+  -webkit-transition-delay: 0.2s;
+  transition-delay: 0.2s;
+}
+
+.appear2.inview2:nth-child(3) {
+  -webkit-transition-delay: 0.3s;
+  transition-delay: 0.3s;
+}
+
+.appear2.inview2:nth-child(4) {
+  -webkit-transition-delay: 0.4s;
+  transition-delay: 0.4s;
+}
+
+.appear2.inview2:nth-child(5) {
+  -webkit-transition-delay: 0.5s;
+  transition-delay: 0.5s;
 }

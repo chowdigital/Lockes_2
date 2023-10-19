@@ -1,0 +1,178 @@
+.book-btn {
+  position: fixed;
+  top: 19px;
+  right: 20px;
+  border: none;
+  cursor: pointer;
+  z-index: 99; /* Ensure it's above the menu */
+  span {
+    color: $white;
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+    align-self: center;
+    padding-top: 8px;
+    z-index: 1;
+    transition: color 0.2s ease-in-out;
+  }
+  height: 33px;
+  width: 60px;
+  text-align: center;
+  text-decoration: none;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  border-right: 2px solid transparent;
+  border-left: 2px solid transparent;
+}
+@media (min-width: $lg) {
+  .book-btn {
+    width: 127.07px;
+  }
+}
+
+.book-span:before {
+  content: "";
+  position: absolute;
+  height: 0%;
+  width: 2px;
+  top: 0;
+  left: 0;
+  color: $highlight;
+  background-color: $highlight;
+}
+
+.book-span:after {
+  content: "";
+  position: absolute;
+  height: 0%;
+  width: 2px;
+  bottom: 0;
+  right: 0;
+  color: $highlight;
+  background-color: $highlight;
+}
+.book-btn:before {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  top: 0;
+  right: 0;
+  color: $highlight;
+  background-color: $highlight;
+  transition: width 0.1s;
+  transition: height 0.1s ease-in-out;
+}
+.book-btn:after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  color: $highlight;
+  background-color: $highlight;
+  transition: width 0.1s;
+  transition: height 0.1s ease-in-out;
+}
+
+/* hover 
+.book-btn:hover span {
+  color: $primary;
+  transition: color 0.2s ease-in-out;
+}
+.book-btn:hover:before {
+  height: 100%;
+  transition: height 0.3s ease-in-out;
+}
+.book-btn:hover:after {
+  height: 100%;
+  transition: height 0.3s ease-in-out;
+}
+/* hover */
+/* hightliht on load*/
+.book-btn:hover .book-span:after {
+  animation: animate-btn11 0.5s ease-in-out;
+  animation-iteration-count: 1;
+}
+.book-btn:hover .book-span:before {
+  animation: animate-btn22 0.5s ease-in-out;
+  animation-iteration-count: 1;
+}
+
+.book-btn:hover:before {
+  animation: animate-btn33 0.5s ease-in-out;
+  animation-iteration-count: 1;
+}
+
+.book-btn:hover:after {
+  animation: animate-btn44 0.5s ease-in-out;
+  animation-iteration-count: 1;
+}
+
+@keyframes animate-btn11 {
+  0% {
+    height: 0%;
+    bottom: 0%;
+  }
+  33% {
+    height: 100%;
+    bottom: 0%;
+  }
+  66% {
+    height: 0%;
+    bottom: 100%;
+  }
+}
+@keyframes animate-btn22 {
+  0% {
+    height: 0%;
+    right: 0%;
+  }
+  33% {
+    height: 100%;
+    top: 0%;
+  }
+  66% {
+    height: 0%;
+    top: 100%;
+  }
+}
+@keyframes animate-btn33 {
+  0% {
+    width: 100%;
+    right: 0%;
+  }
+  33% {
+    width: 0%;
+    right: 100%;
+  }
+  66% {
+    width: 0%;
+    right: 0%;
+  }
+  100% {
+    width: 100%;
+    right: 0%;
+  }
+}
+@keyframes animate-btn44 {
+  0% {
+    width: 100%;
+    left: 0%;
+  }
+  33% {
+    width: 0%;
+    left: 100%;
+  }
+  66% {
+    width: 0%;
+    left: 0%;
+  }
+  100% {
+    width: 100%;
+    left: 0%;
+  }
+}
+/* hightliht on load*/
