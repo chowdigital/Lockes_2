@@ -50,14 +50,19 @@
 
                     <div id="fancyMenu" class="menu">
                         <ul>
-                            <li class="page_item page-item-6 current_page_item">Home</li>
-                            <li class="page_item page-item-2">Sample Page</li>
-                            <li class="page_item page-item-3">Sample Page</li>
-                            <li class="page_item page-item-4">Sample Page</li>
-                            <li class="page_item page-item-5">Sample Page</li>
-                            <li class="page_item page-item-6">Sample Page</li>
-                            <li class="page_item page-item-7">Sample Page</li>
-                            <li class="page_item page-item-8">Sample Page</li>
+                            <li class=" appear2 ">
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/logos/logo-icon.svg" alt=""
+                                    style="width:80px;">
+
+                            </li>
+                            <li class="page_item appear2 draw-border-btn page-item-6 current_page_item">Home</li>
+                            <li class="page_item appear2 draw-border-btn page-item-2">Menus</li>
+                            <li class="page_item appear2 draw-border-btn page-item-3">Events</li>
+                            <li class="page_item appear2 draw-border-btn page-item-4">Private Parties</li>
+                            <li class="page_item appear2 draw-border-btn page-item-5">Gallery</li>
+                            <li class="page_item appear2 draw-border-btn page-item-6">Locations</li>
+                            <li class="page_item appear2 draw-border-btn page-item-7">News</li>
+                            <li class="page_item appear2 draw-border-btn page-item-8">Book</li>
                         </ul>
                     </div>
                     <!-- Dummy menu End -->

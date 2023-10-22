@@ -19,6 +19,20 @@ document.addEventListener("DOMContentLoaded", function () {
   // Ensure the menu is closed when the page is fully loaded
   closeMenu();
 
+  // Get a reference to the checkbox element
+  const checkbox = document.getElementById("checkbox1");
+
+  // Add an event listener to listen for changes in the checkbox state
+  checkbox.addEventListener("change", function () {
+    // Check if the checkbox is checked
+    if (checkbox.checked) {
+      // Apply overflow: hidden to the body tag
+      document.body.style.overflow = "hidden";
+    } else {
+      // Remove overflow: hidden from the body tag
+      document.body.style.overflow = "auto";
+    }
+  });
   // Select the div element with the id "bookBtn"
   const bookBtn = document.querySelector("#bookBtn");
 
@@ -28,7 +42,9 @@ document.addEventListener("DOMContentLoaded", function () {
     bookBtn.classList.add("highlight-on-load");
   }, 1000);
   /* End*/
-  /* appear*/
+
+  /* appear navigation end */
+  /* appear food & drink menus */
   const items = document.querySelectorAll(".appear2");
 
   function active(entries) {
@@ -46,5 +62,21 @@ document.addEventListener("DOMContentLoaded", function () {
   items.forEach(function (item) {
     io2.observe(item);
   });
-  /* appear end */
+
+  /* appear food & drink menus end */
+  /* Parallax start 
+  var images = document.querySelectorAll('img');
+  new simpleParallax(images);
+  
+
+  /* Responsive Div Height Start */
+  // Get the height of the first div (ctaText1)
+  var ctaText1 = document.getElementById("ctaText1");
+  var ctaText1Height = ctaText1.clientHeight;
+
+  // Set the height of the second div (ctaText2) to match the height of the first div
+  var ctaText2 = document.getElementById("ctaBg1");
+  ctaText2.style.height = ctaText1Height + "px";
+
+  /* Responsive Div Height End */
 });

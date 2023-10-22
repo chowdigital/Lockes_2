@@ -63,4 +63,25 @@
 
     </section>
 </div>
+<div class="section-parent">
+    <div id="ctaBg1"></div>
+    <img id="ctaSection1" class="appear2"
+        src="<?php echo get_template_directory_uri(); ?>/assets/logos/logo-section-2.svg">
+
+    <section id="cta1" class="cta container">
+        <div class="cta-img draw-border appear2">
+            <img class="" src="<?php echo get_template_directory_uri(); ?>/assets/img/CD1_6381-HDR.png">
+
+        </div>
+        <div class="cta-text">
+            <h2 id="ctaText1" class="thick">hire your own private bar in central London</h2>
+        </div>
+
+
+
+
+    </section>
+</div>
+
+
 <?php get_footer(); ?>
