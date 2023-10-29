@@ -906,7 +906,7 @@ h1 {
 
 #mainLogo {
   width: 100%;
-  position: fixed;
+  position: relative;
   top: 9px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -925,7 +925,6 @@ h1 {
 @media (min-width: 992px) {
   #mainLogo {
     width: 100%;
-    position: fixed;
     top: 23px;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -994,11 +993,10 @@ h1 {
 }
 
 .video-container {
-  position: absolute;
-  height: calc(100vh - 80px);
-  width: calc(100vw - 40px);
+  position: fixed;
+  height: calc(100% - 80px);
+  width: calc(100% - 40px);
   overflow: hidden;
-  position: relative;
   top: 65px;
   left: 20px;
   right: 20px;
@@ -1024,6 +1022,7 @@ h1 {
   left: 50%;
   -webkit-transform: translateX(-50%) translateY(-50%);
           transform: translateX(-50%) translateY(-50%);
+  opacity: 1;
 }
 
 @-webkit-keyframes fadeInUp {
@@ -1050,19 +1049,34 @@ h1 {
   }
 }
 /* Just styling the content of the div, the *magic* in the previous rules */
-.video-container .caption {
+.video-container .main-caption {
   z-index: 1;
-  position: relative;
   text-align: center;
   color: #dae0e5;
-  padding: 10px;
+  font-size: 50px;
+  width: 100%;
+  height: calc(100% - 60px);
+  opacity: 0.5;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.video-container .main-caption h1 {
+  margin-top: 28px;
 }
 
 .section-menus {
   margin-right: auto;
   margin-left: auto;
   margin-top: 100px;
-  margin-bottom: 100px;
+  margin-bottom: 200px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1444,4 +1458,82 @@ h1 {
   height: calc(100% + 130px);
   right: 0;
   z-index: 3;
+}
+
+#logoSection1 {
+  height: 80vh;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  z-index: 3;
+}
+
+.stripes {
+  margin-top: 160px;
+  margin-bottom: 160px;
+  width: 100%;
+  color: transparent;
+  background: repeating-linear-gradient(135deg, #002423, #002423 0px, #e7a649 0px, #e7a649 2px, #e7a649 0px, #002423 0px, #002423 25px);
+}
+.stripes .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.review {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  background-color: #002423;
+  color: #dae0e5;
+  padding: 20px;
+  -ms-flex-preferred-size: 90%;
+      flex-basis: 90%;
+}
+.review p {
+  margin: 5px;
+}
+
+.stars {
+  background-image: url(assets/icons/star.svg);
+  height: 20px;
+  width: 100px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.quote-start {
+  margin-top: 10px;
+  background-image: url(assets/icons/quote.svg);
+  height: 20px;
+  width: 20px;
+  repeat: no-repeat;
+}
+
+.quote-end {
+  margin-bottom: 10px;
+  background-image: url(assets/icons/quote.svg);
+  height: 20px;
+  width: 20px;
+  repeat: no-repeat;
+  rotate: 180deg;
+  margin-left: calc(100% - 20px);
+}
+
+@media (min-width: 768px) {
+  .review {
+    -ms-flex-preferred-size: 40%;
+        flex-basis: 40%;
+  }
+}
+@media (min-width: 1200px) {
+  .review {
+    -ms-flex-preferred-size: 20%;
+        flex-basis: 20%;
+  }
 }/*# sourceMappingURL=style.css.map */

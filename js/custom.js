@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Check if the checkbox is checked
     if (checkbox.checked) {
       // Apply overflow: hidden to the body tag
-      document.body.style.overflow = "hidden";
+      //   document.body.style.overflow = "hidden";
     } else {
       // Remove overflow: hidden from the body tag
       document.body.style.overflow = "auto";
@@ -64,10 +64,9 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   /* appear food & drink menus end */
-  /* Parallax start 
-  var images = document.querySelectorAll('img');
+  /* Parallax start */
+  var images = document.querySelectorAll("img.parallax");
   new simpleParallax(images);
-  
 
   /* Responsive Div Height Start */
   // Get the height of the first div (ctaText1)
@@ -79,4 +78,21 @@ document.addEventListener("DOMContentLoaded", function () {
   ctaText2.style.height = ctaText1Height + "px";
 
   /* Responsive Div Height End */
+  /* scroll size element */
+
+  const scrollingElement = document.getElementById("logoSection1");
+  const fadeVideo = document.getElementById("myVideoLg");
+  const fadeMessage = document.getElementById("keyMessage");
+
+  window.addEventListener("scroll", () => {
+    const scrollPosition = window.scrollY;
+    const newHeight = 80 + scrollPosition / 3;
+    const newOpacity = 1.2 - scrollPosition / 800;
+    const newOpacity2 = 1 - scrollPosition / 600;
+    scrollingElement.style.height = newHeight + "vh";
+    fadeVideo.style.opacity = newOpacity;
+    fadeMessage.style.opacity = newOpacity2;
+    scrollingElement.style.opacity = newOpacity2;
+  });
+  /* scroll size element End */
 });

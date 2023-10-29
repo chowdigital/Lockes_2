@@ -371,7 +371,7 @@ h1 {
 }
 #mainLogo {
   width: 100%;
-  position: fixed;
+  position: relative;
   top: 9px;
   display: flex;
   justify-content: center;
@@ -385,7 +385,6 @@ h1 {
 @media (min-width: $lg) {
   #mainLogo {
     width: 100%;
-    position: fixed;
     top: 23px;
     display: flex;
     justify-content: center;
@@ -447,11 +446,10 @@ h1 {
   height: 100vh;
 }
 .video-container {
-  position: absolute;
-  height: calc(100vh - 80px);
-  width: calc(100vw - 40px);
+  position: fixed;
+  height: calc(100% - 80px);
+  width: calc(100% - 40px);
   overflow: hidden;
-  position: relative;
   top: 65px;
   left: 20px;
   right: 20px;
@@ -471,6 +469,7 @@ h1 {
   top: 50%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
+  opacity: 1;
 }
 @keyframes fadeInUp {
   0% {
@@ -488,12 +487,21 @@ h1 {
 }
 
 /* Just styling the content of the div, the *magic* in the previous rules */
-.video-container .caption {
+
+.video-container .main-caption {
   z-index: 1;
-  position: relative;
   text-align: center;
   color: $white;
-  padding: 10px;
+  font-size: 50px;
+  width: 100%;
+  height: calc(100% - 60px);
+  opacity: 0.5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  h1 {
+    margin-top: 28px;
+  }
 }
 
 // ===========================================================================
@@ -503,7 +511,7 @@ h1 {
   margin-right: auto;
   margin-left: auto;
   margin-top: 100px;
-  margin-bottom: 100px;
+  margin-bottom: 200px;
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
@@ -888,4 +896,84 @@ h1 {
   height: calc(100% + 130px);
   right: 0;
   z-index: 3;
+}
+
+#logoSection1 {
+  height: 80vh;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  z-index: 3;
+}
+
+// ===========================================================================
+// 8. Reviews
+// ===========================================================================
+
+.stripes {
+  margin-top: 160px;
+  margin-bottom: 160px;
+
+  width: 100%;
+  color: transparent;
+  background: repeating-linear-gradient(
+    135deg,
+    $primary,
+    $primary 0px,
+    $highlight 0px,
+    $highlight 2px,
+    $highlight 0px,
+    $primary 0px,
+    $primary 25px
+  );
+  .container {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+.review {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  background-color: $primary;
+  color: $white;
+  padding: 20px;
+  flex-basis: 90%;
+  p {
+    margin: 5px;
+  }
+}
+.stars {
+  background-image: url(assets/icons/star.svg);
+  height: 20px;
+  width: 100px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.quote-start {
+  margin-top: 10px;
+  background-image: url(assets/icons/quote.svg);
+  height: 20px;
+  width: 20px;
+  repeat: no-repeat;
+}
+.quote-end {
+  margin-bottom: 10px;
+  background-image: url(assets/icons/quote.svg);
+  height: 20px;
+  width: 20px;
+  repeat: no-repeat;
+  rotate: 180deg;
+  margin-left: calc(100% - 20px);
+}
+@media (min-width: $md) {
+  .review {
+    flex-basis: 40%;
+  }
+}
+@media (min-width: $xl) {
+  .review {
+    flex-basis: 20%;
+  }
 }
